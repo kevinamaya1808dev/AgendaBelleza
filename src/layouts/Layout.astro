@@ -1,23 +1,21 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import '../styles/global.css';
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+</head>
+<body class="text-gray-900 font-sans relative">
+    
+    <div class="fixed inset-0 z-[-1] h-full w-full bg-pink-50 bg-[radial-gradient(#fbcfe8_1px,transparent_1px)] [background-size:20px_20px]"></div>
+
+    <slot /> 
+
+</body>
+</html>

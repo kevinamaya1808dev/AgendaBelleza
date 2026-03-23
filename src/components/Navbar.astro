@@ -1,0 +1,62 @@
+---
+const { salonName } = Astro.props;
+---
+
+<nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-pink-100">
+  <div class="max-w-6xl mx-auto px-5 py-4 flex justify-between items-center">
+    
+    <h1 class="font-extrabold text-2xl text-gray-900 tracking-tight">
+      <a href="/">{salonName}</a>
+    </h1>
+    
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#servicios" class="text-sm font-semibold text-gray-600 hover:text-pink-600 transition-colors">Servicios</a>
+      <a href="#ubicacion" class="text-sm font-semibold text-gray-600 hover:text-pink-600 transition-colors">Ubicación</a>
+      <a href="#contacto" class="text-sm font-semibold text-gray-600 hover:text-pink-600 transition-colors">Contacto</a>
+      <a href="#agendar" class="bg-pink-500 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-pink-500/30 hover:bg-pink-600 hover:scale-105 transition-all">
+        Agendar Cita
+      </a>
+    </div>
+
+    <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden text-gray-600 hover:text-pink-600 focus:outline-none p-2 cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-pink-50 absolute w-full shadow-2xl">
+    <div class="flex flex-col px-5 py-6 gap-6 text-center">
+      <a href="#servicios" class="mobile-link text-lg font-semibold text-gray-800 hover:text-pink-600">Servicios</a>
+      <a href="#ubicacion" class="mobile-link text-lg font-semibold text-gray-800 hover:text-pink-600">Ubicación</a>
+      <a href="#contacto" class="mobile-link text-lg font-semibold text-gray-800 hover:text-pink-600">Contacto</a>
+      <a href="#agendar" class="mobile-link bg-pink-500 text-white px-6 py-3 rounded-xl text-lg font-bold shadow-lg shadow-pink-500/30">
+        Agendar Cita
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Ponemos todo dentro de una función segura
+  const setupMenu = () => {
+    const btnMenu = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const links = document.querySelectorAll('.mobile-link');
+
+    if (btnMenu && menu) {
+      btnMenu.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    }
+
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        if (menu) menu.classList.add('hidden');
+      });
+    });
+  };
+
+  // Ejecutamos la función cuando el documento esté listo
+  document.addEventListener('DOMContentLoaded', setupMenu);
+</script>

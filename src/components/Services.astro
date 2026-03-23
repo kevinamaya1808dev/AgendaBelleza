@@ -1,0 +1,30 @@
+---
+// Importamos los datos específicos que este componente necesita
+import { servicios } from '../data/salon.js';
+---
+<section id="servicios" class="max-w-6xl mx-auto px-5 py-24">
+  <div class="text-center mb-16">
+    <h2 class="text-4xl font-bold text-gray-900 mb-4">Nuestros Servicios</h2>
+    <p class="text-gray-500">Selecciona el tratamiento ideal para ti</p>
+  </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {servicios.map((servicio) => (
+      <div class="bg-white rounded-3xl shadow-sm hover:shadow-xl overflow-hidden border border-gray-100 transition-all duration-300 group">
+        <div class="overflow-hidden h-56">
+          <img src={servicio.imagen} alt={servicio.nombre} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <div class="p-8">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-2xl font-bold text-gray-900">{servicio.nombre}</h3>
+            <span class="bg-gray-100 text-gray-800 font-bold px-3 py-1 rounded-lg">{servicio.precio}</span>
+          </div>
+          <p class="text-gray-600 mb-8 min-h-[50px]">{servicio.descripcion}</p>
+          <a href="#agendar" class="btn-agendar block text-center w-full bg-gray-900 hover:bg-pink-500 text-white font-medium py-3 rounded-xl transition-colors cursor-pointer" data-servicio={servicio.nombre}>
+  Agendar {servicio.nombre}
+</a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
