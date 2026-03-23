@@ -1,15 +1,22 @@
 ---
+// Importamos el CSS global que contiene Tailwind y el scroll-smooth
 import '../styles/global.css';
 
+// Recibimos el título de la página desde el index
 const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <title>{title}</title>
+</head>
 
-  </head>
 <body class="text-gray-900 font-sans relative">
     
     <div class="fixed inset-0 z-[-1] h-full w-full bg-pink-50 bg-[radial-gradient(#fbcfe8_1px,transparent_1px)] [background-size:20px_20px]"></div>
