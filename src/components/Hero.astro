@@ -1,19 +1,31 @@
 ---
-// Aquí no necesitamos importar datos, solo HTML puro
+// src/components/Hero.astro
 ---
-<section class="relative bg-pink-50 overflow-hidden">
-  <div class="max-w-6xl mx-auto px-5 py-24 md:py-32 flex flex-col items-center text-center">
-    <span class="bg-pink-100 text-pink-600 px-4 py-1 rounded-full text-sm font-bold mb-6 tracking-wide uppercase">
+<section class="relative bg-gradient-to-b from-pink-200 via-pink-100 to-white overflow-hidden">
+  
+  <div class="max-w-6xl mx-auto px-5 pt-32 pb-32 md:pt-40 md:pb-48 flex flex-col items-center text-center relative z-10">
+    
+    <span class="bg-white/80 text-pink-600 px-5 py-1.5 rounded-full text-sm font-bold mb-6 tracking-wide uppercase shadow-sm backdrop-blur-sm border border-pink-100">
       Especialistas en Belleza
     </span>
+    
     <h2 class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-6 leading-tight">
       Realza tu <span class="text-pink-500">belleza natural</span>
     </h2>
+    
     <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl">
       Diseño de miradas, cuidado de manos y tratamientos estéticos de primera calidad. Un espacio creado para consentirte.
     </p>
-    <a href="#servicios" class="bg-pink-500 text-white shadow-xl shadow-pink-500/30 px-8 py-4 rounded-full text-lg font-bold hover:bg-pink-600 hover:scale-105 transition-all">
+    
+    <a href="#agendar" class="bg-pink-500 text-white shadow-xl shadow-pink-500/30 px-8 py-4 rounded-full text-lg font-bold hover:bg-pink-600 hover:scale-105 transition-all">
       Agendar mi cita
     </a>
+  </div>
+
+  <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+    <svg class="relative block w-full h-[60px] md:h-[120px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C58.47,106,121.72,115.82,185.73,110.19,240.24,105.41,280.4,76,321.39,56.44Z" fill="#ffffff" class="fill-pink-50/20"></path>
+        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86C280.4,76,240.24,105.41,185.73,110.19c-64,5.63-127.26-4.19-185.73-14.39V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="#ffffff"></path>
+    </svg>
   </div>
 </section>
